@@ -2,7 +2,7 @@
 
 # TL;DR
 
-Interactively learn the Senzing API.
+Interactively learn the Senzing API with Jupyter.
 - Run: `docker run -it -p 8888:8888 --rm --name jupyter roncewind/sz-jupyter`
 - Open link (cmd-click on mac)
 
