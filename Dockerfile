@@ -58,7 +58,8 @@ RUN apt-get -y install \
 # Copy files from repository.
 
 COPY ./rootfs /
-COPY ./senzing-examples /home/${NB_USER}/senzing-examples
+COPY ./senzing-examples/python /home/${NB_USER}/senzing-examples
+COPY ./tutorials /home/${NB_USER}/tutorials
 RUN fix-permissions "/home/${NB_USER}" \
  && fix-permissions "/var/opt/senzing"
 
