@@ -1,8 +1,8 @@
-# sz-jupyter
+# sz-jupyter is a work in progress
 
 # TL;DR
 
-Learn Senzing API.
+Interactively learn the Senzing API.
 - Run: `docker run -it -p 8888:8888 --rm --name jupyter roncewind/sz-jupyter`
 - Open link (cmd-click on mac)
 
@@ -41,6 +41,28 @@ What story am I telling?
 - Tutorial N+4 - deploy tutorial image with cloudformation
 - Tutorial N+5 - other deployment topics?
 
+## Run Jupyter
+
+Any changes made in a container exists only as long as the container is running.
+Re-running the docker image will clear any work done and start from scratch.  To
+persist work locally, take a look at the [Run with local directory mounted](#run-with-local-directory-mounted) section.
+
+```console
+docker run \
+    --interactive \
+    --tty \
+    --publish 8888:8888 \
+    --rm \
+    --name jupyter \
+    roncewind/sz-jupyter
+```
+
+or a more concisely:
+
+```console
+docker run -it -p 8888:8888 --rm --name jupyter roncewind/sz-jupyter
+```
+
 ## Run with local directory mounted
 
 Any changes made in a container exists only as long as the container is running.
@@ -62,15 +84,21 @@ docker run \
     roncewind/sz-jupyter
 ```
 
-or a more concise version:
+or a more concisely:
 
 ```console
 docker run -it -p 8888:8888 --rm --name jupyter -v $(pwd):/home/jovyan/work roncewind/sz-jupyter
 ```
 
-This mounts the current directory as the `work` directory in the container.  Any
+docker run -it -p 8888:8888 --rm --name jupyter -v ./senzing-examples:/home/jovyan/work/senzing-examples -v ./senzing-tutorials:/home/jovyan/work/senzing-tutorials roncewind/sz-jupyter
+
+This mounts the current directory (`pwd`) as the `work` directory in the container.  Any
 files saved into that directory will be saved outside the container and therefore
-not lost when the container is brought down.
+not lost when the container is brought down.  Any directory can be substituted for
+the `$(pwd)` in the command.  EG `...-v /home/user/my/stuff:/home/jovyan/work`.  Likewise,
+the local directory can be mounted in any directory.  EG `...-v /home/user/my/stuff:/home/jovyan/stuff`.
+Multiple volumes may also be defined with addition `-v` parameters.  Note:  you must
+use an absolute path to your host(local) directory.
 
 # Versioning
 
