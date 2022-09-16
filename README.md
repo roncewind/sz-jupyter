@@ -11,6 +11,9 @@ Learn Senzing API.
 - Senzing library
 - Purpose
 - Examples vs tutorials?
+    - Examples show how to do one thing
+    - Tutorials form a story that weave examples together
+    - Tutorial should have a final "product"
 
 ## Tutorial list (TODO)
 
@@ -25,12 +28,13 @@ What story am I telling?
 - Tutorial 2 - add a datasource
 - Tutorial 3 - add truthset
 - Tutorial ...
-- Tutorial M - senzing config topics
-- Tutorial N - build non-jupyter image and run
-- Tutorial N+1 - connect to non-SQLite database
-- Tutorial N+2 - deploy tutorial image with docker compose stack
-- Tutorial N+3 - deploy tutorial image with cloudformation
-- Tutorial N+4 - other deployment topics?
+- Tutorial M - senzing config topics?
+- Tutorial N - beyond Jupyter?
+- Tutorial N+1 - build non-jupyter image and run
+- Tutorial N+2 - connect to non-SQLite database
+- Tutorial N+3 - deploy tutorial image with docker compose stack
+- Tutorial N+4 - deploy tutorial image with cloudformation
+- Tutorial N+5 - other deployment topics?
 
 ## Run with local directory mounted
 
