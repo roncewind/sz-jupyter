@@ -62,6 +62,12 @@ docker run \
     roncewind/sz-jupyter
 ```
 
+or a more concise version:
+
+```console
+docker run -it -p 8888:8888 --rm --name jupyter -v $(pwd):/home/jovyan/work roncewind/sz-jupyter
+```
+
 This mounts the current directory as the `work` directory in the container.  Any
 files saved into that directory will be saved outside the container and therefore
 not lost when the container is brought down.
