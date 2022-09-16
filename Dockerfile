@@ -60,7 +60,8 @@ RUN apt-get -y install \
 COPY ./rootfs /
 COPY ./senzing-examples/python /home/${NB_USER}/senzing-examples
 COPY ./senzing-tutorials /home/${NB_USER}/senzing-tutorials
-RUN fix-permissions "/home/${NB_USER}" \
+RUN rmdir /home/${NB_USER}/work \
+ && fix-permissions "/home/${NB_USER}" \
  && fix-permissions "/var/opt/senzing"
 
 # switch to the jupyter labs user
