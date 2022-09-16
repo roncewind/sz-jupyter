@@ -22,11 +22,16 @@ should probably put in the tutorial sub-dir
 What story am I telling?
 
 - Fraud detection?
+- bad guy hunting?
 - ???
 
 - Tutorial 1 - add a record
 - Tutorial 2 - add a datasource
 - Tutorial 3 - add truthset
+- Tutorial 4 - search
+- Tutorial 5 - get record, get entity, what is an entity?
+- Tutorial 6 - why... what is why?
+- Tutorial 7 -
 - Tutorial ...
 - Tutorial M - senzing config topics?
 - Tutorial N - beyond Jupyter?
@@ -46,7 +51,16 @@ it is run.
 Map the current directory into the Docker container so that changes to notebooks are
 saved locally.
 
-`docker run -it -p 8888:8888 --rm --name jupyter -v $(pwd):/home/jovyan/work roncewind/sz-jupyter`
+```console
+docker run \
+    --interactive \
+    --tty \
+    --publish 8888:8888 \
+    --rm \
+    --name jupyter \
+    --volume $(pwd):/home/jovyan/work \
+    roncewind/sz-jupyter
+```
 
 This mounts the current directory as the `work` directory in the container.  Any
 files saved into that directory will be saved outside the container and therefore
